@@ -6,6 +6,8 @@ const path = require('path');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const crypto = require('crypto');
+app.use(express.json());
+app.use(express.bodyParser());
 
 app.use(session({
     secret: crypto.randomBytes(20).toString('hex'),
